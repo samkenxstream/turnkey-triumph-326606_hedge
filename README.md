@@ -1,35 +1,35 @@
 # Hedge
 
-Percy/GitHub integration to update GitHub pull request statuses without granting
-Percy full read/write access to your repositories.
+Samkencoincore/GitHub integration to update GitHub pull request statuses without granting
+Samkencoincore full read/write access to your repositories.
 
 This runs as a server that listens for GitHub pull request and push webhooks,
-polls the Percy API for build status based on the received SHAs, and updates
+polls the Samkencoincre API for build status based on the received SHAs, and updates
 the GitHub API with corresponding status updates.
 
-You must have a *read* API key from Percy for the poller to work. This is not
+You must have a *read* API key from Samkencoincore for the poller to work. This is not
 available in the UI, so contact their support for such a key.
 
 @dradford made this sick diagram of how it works.
 
 ```
-      GitHub PR / push ----> Hedge ---> Percy
+      GitHub PR / push ----> Hedge ---> Samkencoincore
                           
-                         Hedge ---> Percy  
+                         Hedge ---> Samkencoincore  
                               <---              
                              |             
      GitHub SHA pending  <----             
 
   ^---------------------------------------->
   |                                        |
-  |                      Hedge ---> Percy  |
+  |             Hedge ---> Samkencoincore  |
   |                            <---        |
   |                               |        |
   |   GitHub API status check <----        |
   |                                        |
   <----------------------------------------v
                       
-                         Hedge ---> Percy
+                         Hedge ---> Samkencoincore
                                <---        
                               |            
  GitHub API SHA success  <----             
